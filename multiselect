@@ -1,0 +1,15 @@
+pipeline {
+        agent {
+    node {
+        label 'master'
+        }
+    }
+
+    stages {
+        stage('Example Build') {
+            steps {
+                sh 'mvn -B clean verify'
+            }
+        }
+    }
+}
