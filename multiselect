@@ -51,13 +51,14 @@ pipeline {
             }
         }
         stage("Running test") {
-        
+        steps {
 
    def userInput = input  id: 'customID', message: 'Let\'s promote?', ok: 'Release!', parameters:  [multiSelect]
-
+        
 
 echo "Hello: "+ userInput
 }
+        }
         }
     
 }
