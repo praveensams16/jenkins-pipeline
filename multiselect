@@ -32,6 +32,10 @@ import com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoicePara
             3, 
             "multiselect", 
             ",") 
+             def userInput = input  id: 'customID', message: 'Let\'s promote?', ok: 'Release!', parameters:  [multiSelect]
+        
+
+        echo "Hello: "+ userInput
 pipeline {
         agent {
     node {
@@ -53,10 +57,7 @@ pipeline {
         stage("Running test") {
         steps {
 
-   def userInput = input  id: 'customID', message: 'Let\'s promote?', ok: 'Release!', parameters:  [multiSelect]
-        
-
-echo "Hello: "+ userInput
+  
 }
         }
         }
