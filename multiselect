@@ -52,7 +52,7 @@ pipeline {
     stages {
         stage('Example Build') {
             steps {
-                sh 'echo "hiii ${userInput}"'
+                sh 'echo "hiii ${users}"'
             }
         }
         
