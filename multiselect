@@ -54,12 +54,7 @@ pipeline {
                 sh 'echo "hiii"'
             }
         }
-        stage("Running test") {
-        steps {
-
-  
-}
-        }
+        
         }
     
 }
