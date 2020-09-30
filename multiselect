@@ -51,7 +51,7 @@ pipeline {
         stage('Example Build') {
             steps {
                 sh 'echo "hiii ${users}"'
-                run()       
+                    
             }
         
         }
