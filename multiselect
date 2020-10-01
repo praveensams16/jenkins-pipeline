@@ -1,25 +1,3 @@
-
-
-pipeline {
-        agent {
-    node {
-        label 'master'
-        }
-    }
-
-    
-    stages {
-        stage('Example Build1') {
-            steps {
-                sh 'echo "hiii ${users}"'
-                    
-            }
-        
-        }
-        
-        }
-    
-
 import com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDefinition
 
 
@@ -54,13 +32,43 @@ import com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoicePara
             3, 
             "multiselect", 
             ",") 
-             def userInput = input  id: 'customID', message: 'Let\'s promote?', ok: 'Release!', parameters:  [multiSelect]
-             env.users=userInput
+             #def userInput = input  id: 'customID', message: 'Let\'s promote?', ok: 'Release!', parameters:  [multiSelect]
+             #env.users=userInput
         
 
-        echo "Hello: "+ userInput
+        #echo "Hello: "+ userInput
 
+        parameters {
+    extendedChoice( 
+        defaultValue: 'One,Two,Three,Four', 
+        description: '', 
+        multiSelectDelimiter: ',', 
+        name: 'SAMPLE_EXTENDED_CHOICE', 
+        quoteValue: false, 
+        saveJSONParameterToFile: false, 
+        type: 'PT_CHECKBOX', 
+        value:'One,Two,Three,Four,Five,Six,Seven,Eight,Nine,Ten', 
+        visibleItemCount: 10)
+    }
+
+pipeline {
+        agent {
+    node {
+        label 'master'
+        }
+    }
 
     
+    stages {
+        stage('Example Build1') {
+            steps {
+                sh 'echo "hiii ${users}"'
+                    
+            }
+        
+        }
+        
+        }
+
    
 }
