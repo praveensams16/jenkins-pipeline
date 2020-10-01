@@ -24,7 +24,7 @@ pipeline {
     stages {
         stage('Example Build1') {
             steps {
-                sh 'echo "hiii ${users}"'
+                sh 'echo "hiii ${SAMPLE_EXTENDED_CHOICE}"'
                     
             }
         
