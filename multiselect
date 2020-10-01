@@ -32,8 +32,8 @@ import com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoicePara
             3, 
             "multiselect", 
             ",") 
-             #def userInput = input  id: 'customID', message: 'Let\'s promote?', ok: 'Release!', parameters:  [multiSelect]
-             #env.users=userInput
+             /*def userInput = input  id: 'customID', message: 'Let\'s promote?', ok: 'Release!', parameters:  [multiSelect]*/
+             /*env.users=userInput*/
         
 
         #echo "Hello: "+ userInput
