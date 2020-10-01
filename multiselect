@@ -1,4 +1,25 @@
 
+
+pipeline {
+        agent {
+    node {
+        label 'master'
+        }
+    }
+
+    
+    stages {
+        stage('Example Build1') {
+            steps {
+                sh 'echo "hiii ${users}"'
+                    
+            }
+        
+        }
+        
+        }
+    
+}
 import com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDefinition
 
 
