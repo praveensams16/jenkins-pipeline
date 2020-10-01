@@ -62,15 +62,5 @@ import com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoicePara
 
 
     
-    stages {
-        stage('Example Build') {
-            steps {
-                sh 'echo "hiii ${users}"'
-                    
-            }
-        
-        }
-        
-        }
-    
+   
 }
