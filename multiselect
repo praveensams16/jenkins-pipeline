@@ -19,7 +19,7 @@ pipeline {
         
         }
     
-}
+
 import com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDefinition
 
 
@@ -60,12 +60,6 @@ import com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoicePara
 
         echo "Hello: "+ userInput
 
-pipeline {
-        agent {
-    node {
-        label 'master'
-        }
-    }
 
     
     stages {
