@@ -32,11 +32,19 @@ pipeline {
         stage('approval'){
             steps{
             script {
-                   env.APPROVED_DEPLOY = input message: 'User input required',
+                   env.APPROVED_DEPLOY = input message: 'Do you wish to continue',
                    parameters: [choice(name: 'Deploy?', choices: 'no\nyes', description: 'Choose "yes" if you want to deploy this build')]       
                 }
         }
         
+        }
+        stage('Running') {
+                steps {
+                    sh """
+                      echo ${APPROVED_DEPLOY}
+                      """
+                     
+                }
         }
     }
 
