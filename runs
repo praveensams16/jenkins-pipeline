@@ -2,16 +2,40 @@
 
 
 pipeline {
+        agent {
+    node {
+        label 'master'
+        }
+    }
 
     
     stages {
         stage('Example Build1') {
             steps {
-                sh 'echo "hiii '
+                sh 'echo "hiii ${SAMPLE_EXTENDED_CHOICE}"'
                     
             }
         
         }
+        stage('approval'){
+            steps{
+            script {
+                   env.APPROVED_DEPLOY = input message: 'Do you wish to continue',
+                   parameters: [choice(name: 'Deploy?', choices: 'no\nyes', description: 'Choose "yes" if you want to deploy this build')]       
+                }
+        }
+        
+        }
+        stage('Running') {
+            
+                steps {
+                    sh """
+                      echo ${APPROVED_DEPLOY}
+                      """
+                     
+                }
+        }
+    }
+
    
-}
 }
